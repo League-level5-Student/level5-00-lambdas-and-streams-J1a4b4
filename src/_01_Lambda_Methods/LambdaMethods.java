@@ -41,7 +41,7 @@ public class LambdaMethods {
 		};
 		printCustomMessage(mixCase, "String");
 		//4. Call the printCustonMessage method using a lambda so that the String prints with a period in between each character.
-		SpecialPrinter periodPuntuated = (s) -> {
+		SpecialPrinter periodPunctuated = (s) -> {
 			String s1 = "";
 			for (int i = 0; i < s.length(); i++) {
 				s1 += s.charAt(i);
@@ -51,8 +51,27 @@ public class LambdaMethods {
 				s += s1.charAt(i) + ".";
 			}
 		};
+		printCustomMessage(periodPunctuated, "String");
 		//5. Call the printCustonMessage method using a lambda so that the String prints without any vowels.
-	
+		SpecialPrinter oopsAllConsonants = (s) -> {
+			for (int i = 0; i < s.length(); i++) {
+				switch (s.charAt(i)) {
+					case 'a':
+					case 'e':
+					case 'i':
+					case 'o':
+					case 'u':
+					case 'A':
+					case 'E':
+					case 'I':
+					case 'O':
+					case 'U':
+						s = s.substring(0, i) + s.substring(i+1, s.length());
+						break;
+				}
+			}
+		};
+		printCustomMessage(oopsAllConsonants, "String");
 	}
 	
 	public static void printCustomMessage(SpecialPrinter sp, String value) {
