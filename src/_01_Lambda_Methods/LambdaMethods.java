@@ -13,7 +13,7 @@ public class LambdaMethods {
 		}, "repeat");
 		
 		//2. Call the printCustonMessage method using a lambda so that the String prints backwards.
-		SpecialPrinter backwards = (s) -> {
+		printCustomMessage((s) -> {
 			String s1 = "";
 			for (int i = 0; i < s.length(); i++) {
 				s1 += s.charAt(i);
@@ -22,10 +22,10 @@ public class LambdaMethods {
 			for (int i = s1.length() - 1; i >= 0; i--) {
 				s += s1.charAt(i);
 			}
-		};
-		printCustomMessage(backwards, "String");
+			System.out.println(s);
+		}, "Backwards!");
 		//3. Call the printCustonMessage method using a lambda so that the String prints with a mix between upper an lower case characters.
-		SpecialPrinter mixCase = (s) -> {
+		printCustomMessage((s) -> {
 			String s1 = "";
 			for (int i = 0; i < s.length(); i++) {
 				s1 += s.charAt(i);
@@ -38,10 +38,10 @@ public class LambdaMethods {
 					s += s1.substring(i, i + 1).toUpperCase();
 				}
 			}
-		};
-		printCustomMessage(mixCase, "String");
+			System.out.println(s);
+		}, "mixcase");
 		//4. Call the printCustonMessage method using a lambda so that the String prints with a period in between each character.
-		SpecialPrinter periodPunctuated = (s) -> {
+		printCustomMessage((s) -> {
 			String s1 = "";
 			for (int i = 0; i < s.length(); i++) {
 				s1 += s.charAt(i);
@@ -50,10 +50,10 @@ public class LambdaMethods {
 			for (int i = 0; i < s1.length(); i++) {
 				s += s1.charAt(i) + ".";
 			}
-		};
-		printCustomMessage(periodPunctuated, "String");
+			System.out.println(s);
+		}, "Period");
 		//5. Call the printCustonMessage method using a lambda so that the String prints without any vowels.
-		SpecialPrinter oopsAllConsonants = (s) -> {
+		printCustomMessage((s) -> {
 			for (int i = 0; i < s.length(); i++) {
 				switch (s.charAt(i)) {
 					case 'a':
@@ -67,11 +67,12 @@ public class LambdaMethods {
 					case 'O':
 					case 'U':
 						s = s.substring(0, i) + s.substring(i+1, s.length());
+						i--;
 						break;
 				}
 			}
-		};
-		printCustomMessage(oopsAllConsonants, "String");
+			System.out.println(s);
+		}, "Oops!  All consonants!");
 	}
 	
 	public static void printCustomMessage(SpecialPrinter sp, String value) {

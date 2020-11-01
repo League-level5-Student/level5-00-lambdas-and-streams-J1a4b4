@@ -1,8 +1,6 @@
 package _00_JButtons_with_Lambdas;
 
 import java.awt.FlowLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Random;
 
 import javax.swing.JButton;
